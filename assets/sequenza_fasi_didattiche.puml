@@ -1,0 +1,27 @@
+@startuml
+title Fasi didattiche
+
+' autonumber
+
+participant "Sist. Feedback" as S
+actor "Formatore" as I
+actor "Squadre" as G
+actor "Studenti" as C
+
+S -> C: Punteggio iniziale e formazione squadre
+
+loop Per ogni problema //P//
+    I -> C: Presenta //P// e propone quiz individuale
+    C -> S: Risponde al quiz
+    S -> C: Aggiorna la classifica
+    C -> C: Discute le risposte
+    I -> C: Illustra la soluzione naïf
+    I -> G: Propone la sfida complessa
+    G -> S: Elabora e consegna la soluzione
+    G -> S: Sceglie importo bonus/malus
+    G -> C: Espone il processo risolutivo
+    S -> C: Aggiorna la classifica
+    I -> C: Spiega la teoria e formula il **modello**
+end
+@enduml
+
